@@ -148,7 +148,7 @@ $chkFilter_10_digits = TkCheckButton.new(root) do
 end
 # ---> End of Ruby GUI
 
-#btn_OK.bind('Enter', proc {puts 'SEX'})
+btn_OK.bind('Enter', proc {puts 'SEX'})
 # puts (File.directory?(txtInput.get << '/sample') ? btn_OK.command(proc {myproc(txtInput)}) : "no folder found")
 Tk.mainloop
 
