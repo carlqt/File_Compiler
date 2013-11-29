@@ -17,6 +17,7 @@ def message(msg)
 end
 
 def myproc(input, output, fname)
+puts $chkRemoveDuplicate.variable
 
   # curr_directory = Dir.pwd << '\sample'
   curr_directory = input.get.tr('\\', '/')
@@ -119,7 +120,7 @@ btn_OK = TkButton.new(root) do
   relief      "groove"
   command (proc {myproc(txtInput,txtOutput,txtFilename)})
   pack("side" => "right",  "padx"=> "50", "pady"=> "10")
-  place('x'=>60, 'y'=>180)
+  place('x'=>10, 'y'=>120)
 end
 
 btn_exit = TkButton.new(root) do
@@ -131,15 +132,24 @@ btn_exit = TkButton.new(root) do
   relief      "groove"
   command (proc {exit_app})
   pack("side" => "right",  "padx"=> "50", "pady"=> "10")
-  place('x'=>120, 'y'=>180)
+  place('x'=>70, 'y'=>120)
 end
 
 
+$chkRemoveDuplicate = TkCheckButton.new(root) do
+  text "Remove Duplicate"
+  indicatoron true
+  place('x' => 250, 'y'=> 120)
+end
+
+$chkFilter_10_digits = TkCheckButton.new(root) do
+  text "Filter 10 digit numbers"
+  place('x' => 250, 'y'=> 150)
+end
 # ---> End of Ruby GUI
 
-#btn_OK.bind('Enter', proc {puts 'SEX'})
+btn_OK.bind('Enter', proc {puts 'SEX'})
 # puts (File.directory?(txtInput.get << '/sample') ? btn_OK.command(proc {myproc(txtInput)}) : "no folder found")
-
 Tk.mainloop
 
 
